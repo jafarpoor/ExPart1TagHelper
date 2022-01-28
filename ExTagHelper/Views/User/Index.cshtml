@@ -1,0 +1,52 @@
+﻿@model User
+@{
+
+    ViewData["Title"] = "User Page";
+}
+
+@*frist Way*@
+@*<form  asp-controller="User"  asp-action="index" method="post">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <br />
+
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <br />
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </form>*@
+
+
+
+@*second way*@
+<form asp-route="AddUser" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+
+    <br />
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+
+    <br />
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+
+    <br />
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+
+    <br />
+
+    <label asp-for="Age"></label>
+    <input asp-for="Age" />
+    <span asp-validation-for="Age"></span>
+
+    <br />
+
+    <button asp-controller="User" asp-action="Index">Send Data</button>
+</form>
